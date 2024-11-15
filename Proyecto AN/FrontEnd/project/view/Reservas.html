@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API Reservas con Bootstrap</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Gestión de Reservas</h2>
+    <form id="crudForm">
+        <!-- Campo oculto para almacenar el ID de la reserva en edición -->
+        <input type="hidden" id="id" name="id">
+
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hora">Hora</label>
+            <input type="time" class="form-control" id="hora" name="hora" required>
+        </div>
+
+        <div class="form-group">
+            <label for="usuarioId">ID de Usuario</label>
+            <input type="number" class="form-control" id="usuarioId" name="usuarioId" required>
+        </div>
+
+        <div class="form-group">
+            <label for="usuarioNombre">Nombre del Usuario</label>
+            <input type="text" class="form-control" id="usuarioNombre" name="usuarioNombre" required>
+        </div>
+
+        <div class="d-flex mb-3">
+            <button type="button" class="btn btn-primary mx-2" id="submitButton" onclick="createOrUpdate()">Guardar</button>
+            <button type="button" class="btn btn-secondary mx-2" onclick="resetForm()">Limpiar</button>
+            <a href="../dashboard.html" class="btn btn-primary mx-2">Regresar</a>
+        </div>
+    </form>
+
+    <hr>
+    <h3>Lista de Reservas</h3>
+    <table class="table table-bordered" id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Usuario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+            <!-- Los registros de reservas se cargarán aquí -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="Reservas.js"></script>
+
+</body>
+</html>

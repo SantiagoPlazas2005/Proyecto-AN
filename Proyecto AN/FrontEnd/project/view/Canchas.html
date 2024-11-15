@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Canchas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Gestión de Canchas</h2>
+    <form id="crudForm">
+        <!-- Campo oculto para almacenar el ID de la cancha -->
+        <input type="hidden" id="id" name="id">
+
+        <div class="form-group">
+            <label for="nombre">Nombre de la Cancha</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ubicacion">Ubicación</label>
+            <input type="text" class="form-control" id="ubicacion" name="ubicacion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="horariosDisponibles">Horarios Disponibles</label>
+            <input type="text" class="form-control" id="horariosDisponibles" name="horariosDisponibles" required>
+        </div>
+
+        <div class="d-flex mb-3">
+            <button type="button" class="btn btn-primary mx-2" id="submitButton" onclick="createOrUpdate()">Guardar</button>
+            <button type="button" class="btn btn-secondary mx-2" onclick="resetForm()">Limpiar</button>
+            <a href="../dashboard.html" class="btn btn-primary mx-2">Regresar</a>
+        </div>
+        
+    </form>
+
+    <hr>
+    <h3>Lista de Canchas</h3>
+    <table class="table table-bordered" id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Ubicación</th>
+                <th>Horarios Disponibles</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+            <!-- Los registros se cargarán aquí -->
+        </tbody>
+    </table>
+</div>
